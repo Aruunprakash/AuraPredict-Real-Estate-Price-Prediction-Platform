@@ -59,6 +59,11 @@ The project demonstrates the complete Machine Learning workflow, including data 
 * Location-Based Features
 * Rare Category Handling
 
+### 3.Outlier Detection & Removal
+* Removed bathroom outliers
+* Removed BHK-based outliers
+* Performed location-wise price analysis
+
 
 ## 📜 License
 
