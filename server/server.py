@@ -3,9 +3,9 @@ import util
 app = Flask(__name__)
 
 util.load_saved_artifacts()
-@app.route('./get_location_names',methods=['POST'])
+@app.route('/get_location_names', methods=['GET', 'POST'])
 def get_location_names():
-    print("DEBUG locations:", locations, type(locations))
+    print("DEBUG locations:", util.get_location_names(), type(util.get_location_names()))
     response = jsonify({
         'locations':util.get_location_names()
     })
@@ -28,4 +28,4 @@ def get_price():
 
 if __name__ == '__main__':
     print("starting py flask server for home price prediction")
-    app.run(port=5000)
+    app.run()
