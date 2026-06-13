@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraPredict | Enterprise Real Estate Price Valuation</title>
+    <!-- Premium Editorial & Sans Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Soft Background Elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    
+    <div class="app-container">
+        <!-- Premium Navigation Header -->
+        <header class="app-header">
+            <div class="logo" id="app-logo" style="cursor: pointer;">
+                <i class="fa-solid fa-house-chimney-window"></i>
+                <span>AuraPredict</span>
+            </div>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#estimator" class="nav-link active">Valuation Tool</a>
+                <a href="#insights" class="nav-link">Market Insights</a>
+                <a href="#model-details" class="nav-link">About the Model</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="status-badge" id="api-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Connecting...</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <main class="main-content" id="estimator">
+            <!-- Left Panel: Hero & Trust Section -->
+            <section class="hero-section">
+                <div class="trust-badge-mini">
+                    <i class="fa-solid fa-circle-check"></i> Enterprise Real Estate Valuation
+                </div>
+                <h1 class="hero-title">Professional Property <span class="text-gradient">Valuation Engine</span></h1>
+                <p class="hero-subtitle">
+                    Enter property metrics to execute advanced machine learning valuation models. Instantly retrieve precise estimates calibrated for the Bangalore real estate market.
+                </p>
+                
+                <!-- Quick Statistics Grid -->
+                <div class="stats-mini-grid">
+                    <div class="stat-mini-card">
+                        <span class="stat-num">94%</span>
+                        <span class="stat-lbl">Accuracy Rating</span>
+                    </div>
+                    <div class="stat-mini-card">
+                        <span class="stat-num">13k+</span>
+                        <span class="stat-lbl">Data Points</span>
+                    </div>
+                    <div class="stat-mini-card">
+                        <span class="stat-num">240+</span>
+                        <span class="stat-lbl">Sub-Localities</span>
+                    </div>
+                </div>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Dynamic Calibration</h4>
+                            <p>Accounts for location variables and structural floor plans dynamically.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Predictor Form -->
+            <section class="form-section">
+                <div class="glass-card">
+                    <h2 class="card-title">Property Input parameters</h2>
+                    <form id="prediction-form" autocomplete="off">
+                        
+                        <!-- Location Field -->
+                        <div class="input-group">
+                            <label for="location-input">
+                                <i class="fa-solid fa-location-dot icon-label"></i> Location 
+                                <span class="tooltip-wrapper"><i class="fa-solid fa-circle-info tooltip-icon"></i><span class="tooltip-text">Select one of 240+ Bangalore localities.</span></span>
+                            </label>
+                            <div class="autocomplete-container">
+                                <input type="text" id="location-input" placeholder="Enter neighborhood (e.g. Whitefield)..." required>
+                                <span class="clear-btn" id="clear-location"><i class="fa-solid fa-xmark"></i></span>
+                                <div id="location-dropdown" class="dropdown-list"></div>
+                            </div>
+                        </div>
+
+                        <!-- Square Footage -->
+                        <div class="input-group">
+                            <label for="sqft-input">
+                                <i class="fa-solid fa-ruler-combined icon-label"></i> Total Square Footage
+                                <span class="tooltip-wrapper"><i class="fa-solid fa-circle-info tooltip-icon"></i><span class="tooltip-text">Total built-up or super built-up area in sq ft.</span></span>
+                            </label>
+                            <div class="input-with-unit">
+                                <input type="number" id="sqft-input" placeholder="e.g. 1500" min="100" max="50000" required>
+                                <span class="unit-badge">sq ft</span>
+                            </div>
+                        </div>
+
+                        <!-- BHK Selector -->
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-bed icon-label"></i> BHK (Bedrooms)</label>
+                            <div class="segmented-control" id="bhk-selector">
+                                <button type="button" class="segment-btn active" data-value="1">1</button>
+                                <button type="button" class="segment-btn" data-value="2">2</button>
+                                <button type="button" class="segment-btn" data-value="3">3</button>
+                                <button type="button" class="segment-btn" data-value="4">4</button>
+                                <button type="button" class="segment-btn" data-value="5">5+</button>
+                            </div>
+                        </div>
+
+                        <!-- Bathrooms Selector -->
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-bath icon-label"></i> Bathrooms</label>
+                            <div class="segmented-control" id="bath-selector">
+                                <button type="button" class="segment-btn" data-value="1">1</button>
+                                <button type="button" class="segment-btn active" data-value="2">2</button>
+                                <button type="button" class="segment-btn" data-value="3">3</button>
+                                <button type="button" class="segment-btn" data-value="4">4</button>
+                                <button type="button" class="segment-btn" data-value="5">5+</button>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-predict" id="btn-submit">
+                            <span class="btn-text">Compute Property Valuation</span>
+                            <span class="btn-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                        </button>
+                    </form>
+
+                    <!-- Prediction Result Display -->
+                    <div id="result-container" class="result-card hidden">
+                        <div class="result-header">
+                            <span class="result-tag" id="result-status-tag">AI Estimate</span>
+                            <button id="close-result" class="close-card-btn"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="price-value" id="price-display">₹ 0.00 Lakhs</div>
+                        <div class="price-breakdown" id="price-details-desc">Details...</div>
+                        <div class="price-convert" id="price-converted-display">USD Equivalent...</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Section 2: Market Insights -->
+        <section class="section-container" id="insights">
+            <h2 class="section-title">Market Analysis & Trends</h2>
+            <p class="section-subtitle">Real-time property market indices across Bangalore localities.</p>
+            
+            <div class="insights-grid">
+                <!-- SVG Price Trend Line Chart -->
+                <div class="insight-card chart-card">
+                    <h3 class="insight-card-title">Bangalore Price Index (12 Months)</h3>
+                    <div class="chart-container">
+                        <!-- Clean, responsive inline SVG line graph -->
+                        <svg viewBox="0 0 500 200" class="svg-chart">
+                            <!-- Grid Lines -->
+                            <line x1="40" y1="20" x2="480" y2="20" stroke="#f0ede8" stroke-dasharray="4" />
+                            <line x1="40" y1="70" x2="480" y2="70" stroke="#f0ede8" stroke-dasharray="4" />
+                            <line x1="40" y1="120" x2="480" y2="120" stroke="#f0ede8" stroke-dasharray="4" />
+                            <line x1="40" y1="170" x2="480" y2="170" stroke="#1e201e" stroke-width="1.5" />
+                            
+                            <!-- Graph Line Path -->
+                            <path d="M 40 150 Q 120 130 200 95 T 360 80 T 480 40" fill="none" stroke="#224229" stroke-width="3" />
+                            
+                            <!-- Plot Dots -->
+                            <circle cx="40" cy="150" r="4" fill="#b38f4d" />
+                            <circle cx="200" cy="95" r="4" fill="#b38f4d" />
+                            <circle cx="360" cy="80" r="4" fill="#b38f4d" />
+                            <circle cx="480" cy="40" r="4" fill="#b38f4d" />
+                            
+                            <!-- Text Labels -->
+                            <text x="35" y="190" fill="#8c8e8c" font-size="10">Q3 2025</text>
+                            <text x="190" y="190" fill="#8c8e8c" font-size="10">Q4 2025</text>
+                            <text x="350" y="190" fill="#8c8e8c" font-size="10">Q1 2026</text>
+                            <text x="445" y="190" fill="#8c8e8c" font-size="10">Active (Q2)</text>
+                        </svg>
+                    </div>
+                    <div class="chart-summary">
+                        <i class="fa-solid fa-arrow-trend-up trending-up-icon"></i>
+                        <span>Average prices have appreciated by <strong>+8.4%</strong> year-over-year.</span>
+                    </div>
+                </div>
+
+                <!-- Top Localities Table -->
+                <div class="insight-card table-card">
+                    <h3 class="insight-card-title">Top Performance Sectors</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Locality</th>
+                                <th>Avg. Price / sqft</th>
+                                <th>Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Indira Nagar</td>
+                                <td>₹14,500 / sqft</td>
+                                <td class="growth-positive">+12.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Whitefield</td>
+                                <td>₹6,850 / sqft</td>
+                                <td class="growth-positive">+9.5%</td>
+                            </tr>
+                            <tr>
+                                <td>HSR Layout</td>
+                                <td>₹9,200 / sqft</td>
+                                <td class="growth-positive">+8.8%</td>
+                            </tr>
+                            <tr>
+                                <td>Electronic City</td>
+                                <td>₹4,200 / sqft</td>
+                                <td class="growth-positive">+5.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Model Details / FAQ Accordions -->
+        <section class="section-container" id="model-details">
+            <h2 class="section-title">Valuation Model Overview</h2>
+            <p class="section-subtitle">Technical summary of our machine learning pipeline.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>How is the property estimation calculated?</span>
+                        <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Our backend serves a Linear Regression model trained using Scikit-Learn. The algorithm resolves independent variables: total square footage, bathroom count, bedrooms (BHK), and location coefficients generated via one-hot encoding to compute predicted prices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What datasets are used to train the algorithm?</span>
+                        <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>The model is trained on the Kaggle Bengaluru House Price dataset containing over 13,300 structural records. We applied statistical cleanup processes, including removal of outliers based on Price per Square Foot and BHK-to-bathroom ratios, ensuring estimates stay realistic.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What is Offline Simulator Mode?</span>
+                        <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>If the Flask API server is offline, the client seamlessly shifts to the local simulator mode. It executes a local deterministic algorithm using location-based weight hashes to estimate prices, ensuring you can evaluate and inspect the user interface without having backend dependencies active.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription footer segment -->
+        <section class="newsletter-section">
+            <div class="newsletter-card">
+                <h3>Receive Local Valuation Reports</h3>
+                <p>Subscribe to monthly real estate market analyses of Bangalore neighborhoods.</p>
+                <form class="newsletter-form" id="subscribe-form">
+                    <input type="email" placeholder="Enter your business email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <div class="logo">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                        <span>AuraPredict</span>
+                    </div>
+                    <p class="footer-desc">Professional-grade real estate valuation powered by machine learning.</p>
+                </div>
+                <div class="footer-right">
+                    <span>Developer Resources:</span>
+                    <a href="https://github.com/Aruunprakash/House-Price-Prediction" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraPredict Systems. All valuations are statistical estimates and do not constitute formal appraisals.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- App JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
