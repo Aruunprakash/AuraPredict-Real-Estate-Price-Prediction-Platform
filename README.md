@@ -1,6 +1,7 @@
 # 🏠 AuraPredict — Real Estate Price Prediction
 
 ![AuraPredict Banner](https://img.shields.io/badge/AuraPredict-Enterprise%20Valuation%20Engine-224229?style=for-the-badge&logo=house&logoColor=white)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-aurapredict.netlify.app-blue?style=flat&logo=netlify)](https://aurapredict.netlify.app)
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=flat&logo=flask&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.x-F7931E?style=flat&logo=scikit-learn&logoColor=white)
@@ -183,11 +184,11 @@ Returns an estimated price in **Lakhs (INR)**.
 
 ## 🗺️ Deployment
 
-> ⏳ Deployment coming soon.
+> 🚀 **Live Demo:** [https://aurapredict.netlify.app](https://aurapredict.netlify.app)
 
-Planned deployment stack:
+Deployment stack:
 - **Backend:** Render / Railway (Flask API)
-- **Frontend:** Vercel / Netlify (Static HTML)
+- **Frontend:** Netlify (Static HTML)
 
 ---
 
